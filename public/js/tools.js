@@ -129,6 +129,7 @@ function readLocalLang() {
         createCookie(LOCAL_LANG_COOKIE, lang);
     }
     document.body.className = lang;
+    setLanguageButtonText(lang);
 }
 
 // -- Get tool # passed to tools page ----------------
@@ -176,11 +177,22 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }
 
-function switchToChinese() {
-    document.body.className = "zh";
-    createCookie(LOCAL_LANG_COOKIE, "zh");
+function switchLanguage(lang) {
+    document.body.className = lang;
+    createCookie(LOCAL_LANG_COOKIE, lang);
+    setLanguageButtonText(lang);
+    document.getElementById("languageDropdown").classList.remove("show");
 };
-function switchToEnglish() {
-    document.body.className = "en";
-    createCookie(LOCAL_LANG_COOKIE, "en");
-};
+
+function toggleLanguageDropdown() {
+    document.getElementById("languageDropdown").classList.toggle("show");
+}
+
+function setLanguageButtonText(lang) {
+    var button = document.getElementById("languageButton");
+    if (lang == "en") {
+        button.innerText = "English";
+    } else if (lang == "zh") {
+        button.innerText = "中文版";
+    }
+}

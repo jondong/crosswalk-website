@@ -28,8 +28,13 @@
       <a lang="zh" href="/documentation" class="nav-link button button--tertiary" id="getting-started-nav">开始</a>
     </li>
     <li class="nav-item">
-      <button class="nav-link" onclick="switchToEnglish();">English Version</button>
-      <button class="nav-link" onclick="switchToChinese();">中文版</button>
+      <div class="dropdown-nav-item">
+        <button id="languageButton" onclick="toggleLanguageDropdown()">Language</button>
+        <div id="languageDropdown" class="dropdown-content">
+          <a onclick="switchLanguage('en')">English</a>
+          <a onclick="switchLanguage('zh')">中文版</a>
+        </div>
+      </div>
     </li>
   </ul>
 </nav>
@@ -68,8 +73,13 @@
         <a lang="zh" href="/documentation/getting_started.html" class="doc-nav-link" style="border:1px solid #ec543b;padding:8px;color:#ec543b;" >开始</a>
       </li>
       <li class="doc-nav-item">
-        <button class="doc-nav-link" onclick="switchToEnglish();">English Version</button>
-        <button class="doc-nav-link" onclick="switchToChinese();">中文版</button>
+        <div>
+          <button id="languageButton" onclick="toggleLanguageDropdown()">Language</button>
+          <div id="languageDropdown" class="dropdown-content">
+            <a onclick="switchLanguage('en')">English</a>
+            <a onclick="switchLanguage('zh')">中文版</a>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
